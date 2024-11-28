@@ -1,3 +1,12 @@
+body {
+    background-color: rgba(204, 220, 224, 0.281);
+}
+
+h1 {
+    font: normal 22pt Arial;
+}
+
+
 body[type=login] {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
