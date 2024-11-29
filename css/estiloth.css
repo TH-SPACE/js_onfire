@@ -1,6 +1,10 @@
 .containerth {
     /* Definindo uma largura para a container que será usada para dimensionar as divs filhas */
     width: 98%;
+    max-width: 98%;
+    display: flex;
+    flex-wrap: wrap;
+
     border: 1px solid #919191;
     margin: 0 10px;
     padding: 15px;
@@ -11,8 +15,10 @@
 }
 
 .box {
+
+    transition: background-color 0.3s ease-in-out;
     /* Definindo uma largura para cada div */
-    width: 30%;
+    width: 25%;
     margin: 5px 5px;
     padding: 20px 0 20px 0;
     text-align: center;
@@ -35,12 +41,14 @@
     box-shadow: 2px 2px 5px #363636;
 }
 
-input[type="text"] {
+
+input[type="text"],
+[type="number"] {
     text-align: center;
     /* Adicionando uma largura para que os campos de entrada ocupem 45% da largura do container */
-    width: 45%;
+    width: 95%;
     /* Adicionando um espaçamento interno em relação ao seu conteúdo */
-    padding: 5px;
+    padding: 10px;
 
     /* Adicionando uma margem em relação aos outros elementos */
     margin-bottom: 10px;
@@ -51,9 +59,15 @@ input[type="text"] {
     border-radius: 3px;
 }
 
-.button-container {
+#resultadoS {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.button-container3 {
+    display: inline-flexbox;
     width: 100%;
-    text-align: center;
+    margin: 5px;
 }
 
 button[type="cardth"] {
@@ -76,7 +90,7 @@ button[type="cardth"] {
     cursor: pointer;
 }
 
-button:hover {
+button:hover[type="cardth"] {
     /* Adicionando um estilo para quando passamos o mouse sobre o botão */
     background-color: #3e8e41;
 }

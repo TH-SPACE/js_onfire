@@ -19,7 +19,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
             <img src="img/letra-t.gif" width="30" height="30" class="d-inline-block align-top" alt="">
             Página do Thiago
         </a>
@@ -49,7 +49,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="calcular.html">TESTE</a>
+                    <a class="nav-link disabled" href="login.html">TESTE</a>
                 </li>
             </ul>
             <a class="btn btn-primary" href="login.html" role="button">LOGIN</a>
@@ -64,35 +64,51 @@
             <h5 class="card-title">SOMAR</h5>
             <input id="soma1" type="number" placeholder="Digite">
             <input id="soma2" type="number" placeholder="Digite">
-            <div class="button-container">
-                <button type="cardth">Enviar</button>
-                <button type="cardth">Limpar</button>
+            <div class="card-text">
+                <p id="resultadoS">0,00</p>
+            </div>
+            <div class="button-container3">
+                <button Class="btn btn-primary" onclick="somar()">Enviar</button>
+                <button Class="btn btn-secondary" onclick="limpar()">Limpar</button>
             </div>
         </div>
         <div class="box">
-            <h5 class="card-title">Calcular</h5>
-            <input type="text" placeholder="Digite">
-            <input type="text" placeholder="Digite">
-            <div class="button-container">
-                <button type="cardth">Enviar</button>
-                <button type="cardth">Limpar</button>
+            <h5 class="card-title">SOMAR</h5>
+            <input id="soma1" type="number" placeholder="Digite">
+            <input id="soma2" type="number" placeholder="Digite">
+            <div class="card-text">
+                <p id="resultadoS">0,00</p>
+            </div>
+            <div class="button-container3">
+                <button Class="btn btn-primary" onclick="somar()">Enviar</button>
+                <button Class="btn btn-secondary">Limpar</button>
             </div>
         </div>
-        <div class="box">Thiago Alves</div>
-        <div class="box">Thiago Alves</div>
     </div>
 
     <!-- ESTUDANDO AQUI -->
     <script>
 
-        /*var n1 = document.getElementById('soma1')
-        var n2 = document.getElementById('soma2')
-        var soma = n1 + n2*/
+        function somar() {
+            //obtem os valores para fazer a soma
+            var num1 = document.getElementById("soma1").value
+            var num2 = document.getElementById("soma2").value
 
-        var nome = window.prompt('Qual seu nome?') //Vai add na var o nome.
-        // window.alert('Bem Vindo ' + nome + "!!")
+            var s = Number(num1) + Number(num2)
+
+            document.getElementById("resultadoS").innerHTML = s
+        }
+        // Limpe os campos de entrada e o elemento div "resultado" 
+        function limpar() { document.getElementById("soma1").value = ""; document.getElementById("soma2").value = ""; document.getElementById("resultadoS").innerHTML = "0,00"; }
+
+        /*var n1 = Number.parseInt(window.prompt('Digite um número?'))
+        var n2 = Number.parseInt(window.prompt('Digite outro número?'))
+        var soma = n1 + n2
+
+        window.alert('A soma é: ' + soma)
+
         var recebeNomea = document.getElementById('recebeNome')
-        recebeNomea.innerHTML = nome + '!!'
+        recebeNomea.innerHTML = soma + '!!'*/
 
 
         /*window.alert('Bem Vindo a página do Thiago!!')
