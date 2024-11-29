@@ -3,35 +3,42 @@
     width: 90%;
     max-width: 55%;
     display: flex;
-
     border: 1px solid #919191;
     margin: 0 10px;
     padding: 10px;
-
     border-radius: 5px;
     box-shadow: 2px 2px 5px #363636;
     text-align: center;
 
 }
 
+.card-th {
+
+    background-color: #dbdbdb;
+    color: #000000;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+
 .box {
 
     transition: background-color 0.3s ease-in-out;
     /* Definindo uma largura para cada div */
-    width: 250px;
-    margin: 5px 5px;
-    padding: 20px 0 20px 0;
+    width: 80%;
+    margin: 5px;
+    padding: 10px 0 10px 0;
     text-align: center;
 
     /* Definindo a propriedade "display" como "inline-block" para cada div */
     display: inline-block;
 
     /* Definindo uma cor de fundo para cada div para que possa ser visto no display */
-    background-color: rgb(152, 109, 253);
+    background-color: rgb(115, 78, 202);
     /* CONFIGURAÇÃO DA FONTE */
-    font-family: Arial, Helvetica, sans-serif;
+
     color: white;
-    font-weight: bolder;
+
 
     /* Adicionando uma borda com largura de 2px, estilo sólido e cor preta */
     border: 0, 5px solid #919191;
@@ -85,7 +92,7 @@ button[type="cardth"] {
 
     /* Adicionando uma borda, uma sombra e um raio de borda */
     border: none;
-    box-shadow: 1px 1px 5px #ccc;
+
     border-radius: 3px;
     /* Adicionando um cursor para mostrar que o botão é clicável */
     cursor: pointer;
