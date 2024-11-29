@@ -1,7 +1,7 @@
 .containerth {
     /* Definindo uma largura para a container que será usada para dimensionar as divs filhas */
     width: 90%;
-    max-width: 55%;
+    max-width: 90%;
     display: flex;
     border: 1px solid #919191;
     margin: 0 10px;
