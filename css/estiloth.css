@@ -1,15 +1,16 @@
 .containerth {
     /* Definindo uma largura para a container que será usada para dimensionar as divs filhas */
-    width: 98%;
-    max-width: 98%;
+    width: 90%;
+    max-width: 55%;
     display: flex;
-    flex-wrap: wrap;
+
     border: 1px solid #919191;
     margin: 0 10px;
-    padding: 15px;
-    height: auto;
+    padding: 10px;
+
     border-radius: 5px;
     box-shadow: 2px 2px 5px #363636;
+    text-align: center;
 
 }
 
@@ -17,7 +18,7 @@
 
     transition: background-color 0.3s ease-in-out;
     /* Definindo uma largura para cada div */
-    width: 250PX;
+    width: 250px;
     margin: 5px 5px;
     padding: 20px 0 20px 0;
     text-align: center;
@@ -58,28 +59,29 @@ input[type="text"],
     border-radius: 3px;
 }
 
-#resultadoS {
+#resultadoS,
+#resultadoM {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
 .button-container3 {
-    display: inline-flexbox;
+    display: inline-block;
     width: 100%;
     margin: 5px;
 }
 
 button[type="cardth"] {
 
-    width: 45%;
+    width: auto;
     display: inline-block;
     /* Adicionando uma cor de fundo */
-    background-color: #4CAF50;
+    background-color: #1a62cf;
     /* Adicionando uma cor de texto */
     color: white;
     /* Adicionando um espaçamento interno em relação ao seu conteúdo */
     padding: 10px;
-    margin: 2px;
+    margin: 5px;
 
     /* Adicionando uma borda, uma sombra e um raio de borda */
     border: none;
@@ -91,5 +93,5 @@ button[type="cardth"] {
 
 button:hover[type="cardth"] {
     /* Adicionando um estilo para quando passamos o mouse sobre o botão */
-    background-color: #3e8e41;
+    background-color: #80b9cf;
 }

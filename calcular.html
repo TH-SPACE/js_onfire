@@ -56,50 +56,69 @@
         </div>
     </nav>
     <div class="alert alert-primary" role="alert">
-        Seja Bem Vindo <a id="recebeNome" href="#" class="alert-link">!</a>
+        <a id="recebeNome1" href="#" class="alert-link"></a>
+        <a id="recebeNome2" href="#" class="alert-link"></a>
     </div>
 
     <div class="containerth">
         <div class="box">
-            <h5 class="card-title">SOMAR</h5>
-            <input id="soma1" type="number" placeholder="Digite">
-            <input id="soma2" type="number" placeholder="Digite">
+            <h5 class="card-title " style="font-weight: bolder;">AULA 01</h5>
+            <input id="num1" type="number" placeholder="Digite">
+            <input id="num2" type="number" placeholder="Digite">
             <div class="card-text">
-                <p id="resultadoS">0,00</p>
+                <p id="resultado">0,00</p>
             </div>
             <div class="button-container3">
-                <button Class="btn btn-primary" onclick="somar()">Enviar</button>
-                <button Class="btn btn-secondary" onclick="limpar()">Limpar</button>
+                <button type="cardth" onclick="somar()">SOMAR</button>
+                <button type="cardth" onclick="multiplicar()">MULTIPLICAR</button>
+                <button Class="btn btn-secondary" onclick="limpar()">APAGAR</button>
             </div>
         </div>
         <div class="box">
-            <h5 class="card-title">SOMAR</h5>
-            <input id="soma1" type="number" placeholder="Digite">
-            <input id="soma2" type="number" placeholder="Digite">
+            <h5 class="card-title" style="font-weight: bolder;">AULA 02</h5>
+            <input id="mult1" type="number" placeholder="Digite">
+            <input id="mult2" type="number" placeholder="Digite">
             <div class="card-text">
-                <p id="resultadoS">0,00</p>
+                <p id="resultadoM">0,00</p>
             </div>
             <div class="button-container3">
-                <button Class="btn btn-primary" onclick="somar()">Enviar</button>
-                <button Class="btn btn-secondary">Limpar</button>
+                <button Class="btn btn-primary" onclick="multiplicar()">Enviar</button>
+                <button Class="btn btn-secondary" onclick="limpar1()">Limpar</button>
             </div>
         </div>
     </div>
+
+
 
     <!-- ESTUDANDO AQUI -->
     <script>
 
         function somar() {
             //obtem os valores para fazer a soma
-            var num1 = document.getElementById("soma1").value
-            var num2 = document.getElementById("soma2").value
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
 
+            // AQUI ELE JA VERIFICA SE É INTEIRO OU REAL
             var s = Number(num1) + Number(num2)
 
-            document.getElementById("resultadoS").innerHTML = s
+            document.getElementById("resultado").innerHTML = "RESULTADO: " + s
+            document.getElementById("recebeNome1").innerHTML = "SOMA: " + s + "!!"
+        }
+
+        function multiplicar() {
+            //obtem os valores para fazer a soma
+            var mult1 = document.getElementById("num1").value
+            var mult2 = document.getElementById("num2").value
+
+            // AQUI ELE JA VERIFICA SE É INTEIRO OU REAL
+            var m = Number(mult1) * Number(mult2)
+
+            document.getElementById("resultado").innerHTML = "RESULTADO: " + m
+            document.getElementById("recebeNome2").innerHTML = "MULTIPLICAÇÃO: " + m + "!!"
+
         }
         // Limpe os campos de entrada e o elemento div "resultado" 
-        function limpar() { document.getElementById("soma1").value = ""; document.getElementById("soma2").value = ""; document.getElementById("resultadoS").innerHTML = "0,00"; }
+        function limpar() { document.getElementById("num1").value = ""; document.getElementById("num2").value = ""; document.getElementById("resultado").innerHTML = "0,00"; document.getElementById("recebeNome2").innerHTML = "" }
 
         /*var n1 = Number.parseInt(window.prompt('Digite um número?'))
         var n2 = Number.parseInt(window.prompt('Digite outro número?'))
