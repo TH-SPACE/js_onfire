@@ -62,16 +62,20 @@
 
     <div class="containerth">
         <div class="box">
-            <h5 class="card-title " style="font-weight: bolder;">AULA 01</h5>
-            <input id="num1" type="number" placeholder="Digite">
-            <input id="num2" type="number" placeholder="Digite">
+            <h5 class="card-title " style="font-weight: bolder;" onclick="limpar()">AULA 01</h5>
+            <input id="num1" type="number" placeholder="NUM 1">
+            <input id="num2" type="number" placeholder="NUM 2">
             <div class="card-text">
-                <p id="resultado">0,00</p>
+                <p id="resultado">-----</p>
             </div>
             <div class="button-container3">
-                <button type="cardth" onclick="somar()">SOMAR</button>
-                <button type="cardth" onclick="multiplicar()">MULTIPLICAR</button>
-                <button class="btn btn-secondary" onclick="limpar()">LIMPAR</button>
+                <button Class="btn btn-primary" onclick="somar()">+</button>
+                <button Class="btn btn-primary" onclick="subtrair()">-</button>
+                <button Class="btn btn-primary" onclick="multiplicar()">x</button>
+                <button Class="btn btn-primary" onclick="dividir()">/</button>
+                <button Class="btn btn-primary" onclick="resto()">%</button>
+                <button Class="btn btn-primary" onclick="potencia()">**</button>
+                <!--<button class="btn btn-secondary" onclick="limpar()">LIMPAR</button>-->
             </div>
         </div>
         <div class="box">
@@ -102,6 +106,20 @@
             <p class="card-th" id="maiuscula"></p>
             <p class="card-th" id="minuscula"></p>
         </div>
+        <div class="box">
+            <h5 class="card-title" style="font-weight: bolder;">AULA 04</h5>
+            <p class="card-th">Digite Seu Nome:</p>
+            <input id="nome1" type="text" placeholder="Nome">
+            <div class="card-text">
+                <p id="resultadoNome">-----</p>
+            </div>
+            <div class="button-container3">
+                <button Class="btn btn-primary" onclick="contar()">ENVIAR</button>
+                <button Class="btn btn-secondary" onclick="limparNome()">LIMPAR</button>
+            </div>
+            <p class="card-th" id="maiuscula"></p>
+            <p class="card-th" id="minuscula"></p>
+        </div>
     </div>
 
 
@@ -115,22 +133,68 @@
             var num2 = document.getElementById("num2").value
 
             // AQUI ELE JA VERIFICA SE É INTEIRO OU REAL
-            var s = Number(num1) + Number(num2)
+            var result = Number(num1) + Number(num2)
 
-            document.getElementById("resultado").innerHTML = "RESULTADO: " + s
-            document.getElementById("recebeNome1").innerHTML = "SOMA: " + s + "!!"
+            document.getElementById("resultado").innerHTML = "RESULTADO: " + result
+            document.getElementById("recebeNome1").innerHTML = "RESULTADO: " + result + "!!"
+        }
+
+        function subtrair() {
+            //obtem os valores para fazer a soma
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+
+            // AQUI ELE JA VERIFICA SE É INTEIRO OU REAL
+            var result = Number(num1) - Number(num2)
+
+            document.getElementById("resultado").innerHTML = "RESULTADO: " + result
+            document.getElementById("recebeNome1").innerHTML = "RESULTADO: " + result + "!!"
         }
 
         function multiplicar() {
             //obtem os valores para fazer a soma
-            var mult1 = document.getElementById("num1").value
-            var mult2 = document.getElementById("num2").value
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
 
             // AQUI ELE JA VERIFICA SE É INTEIRO OU REAL
-            var m = Number(mult1) * Number(mult2)
+            var result = Number(num1) * Number(num2)
 
-            document.getElementById("resultado").innerHTML = "RESULTADO: " + m
-            document.getElementById("recebeNome2").innerHTML = "MULTIPLICAÇÃO: " + m + "!!"
+            document.getElementById("resultado").innerHTML = "RESULTADO: " + result
+            document.getElementById("recebeNome1").innerHTML = "RESULTADO: " + result + "!!"
+        }
+        function dividir() {
+            //obtem os valores para fazer a soma
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+
+            // AQUI ELE JA VERIFICA SE É INTEIRO OU REAL
+            var result = Number(num1) / Number(num2)
+
+            document.getElementById("resultado").innerHTML = "RESULTADO: " + result
+            document.getElementById("recebeNome1").innerHTML = "RESULTADO: " + result + "!!"
+        }
+
+        function resto() {
+            //obtem os valores para fazer a soma
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+
+            // AQUI ELE JA VERIFICA SE É INTEIRO OU REAL
+            var result = Number(num1) % Number(num2)
+
+            document.getElementById("resultado").innerHTML = "RESULTADO: " + result
+            document.getElementById("recebeNome1").innerHTML = "RESULTADO: " + result + "!!"
+        }
+        function potencia() {
+            //obtem os valores para fazer a soma
+            var num1 = document.getElementById("num1").value
+            var num2 = document.getElementById("num2").value
+
+            // AQUI ELE JA VERIFICA SE É INTEIRO OU REAL
+            var result = Number(num1) ** Number(num2)
+
+            document.getElementById("resultado").innerHTML = "RESULTADO: " + result
+            document.getElementById("recebeNome1").innerHTML = "RESULTADO: " + result + "!!"
         }
         function contar() {
             var nome = document.getElementById("nome1").value
@@ -142,7 +206,7 @@
         function limpar() {
             document.getElementById("num1").value = "";
             document.getElementById("num2").value = "";
-            document.getElementById("resultado").innerHTML = "0,00";
+            document.getElementById("resultado").innerHTML = "-----";
             document.getElementById("recebeNome2").innerHTML = "";
             document.getElementById("recebeNome1").innerHTML = ""
         }
