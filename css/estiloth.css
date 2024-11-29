@@ -1,0 +1,82 @@
+.containerth {
+    /* Definindo uma largura para a container que será usada para dimensionar as divs filhas */
+    width: 98%;
+    border: 1px solid #919191;
+    margin: 0 10px;
+    padding: 15px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #363636;
+
+}
+
+.box {
+    /* Definindo uma largura para cada div */
+    width: 30%;
+    margin: 5px 5px;
+    padding: 20px 0 20px 0;
+    text-align: center;
+
+    /* Definindo a propriedade "display" como "inline-block" para cada div */
+    display: inline-block;
+
+    /* Definindo uma cor de fundo para cada div para que possa ser visto no display */
+    background-color: rgb(152, 109, 253);
+    /* CONFIGURAÇÃO DA FONTE */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bolder;
+
+    /* Adicionando uma borda com largura de 2px, estilo sólido e cor preta */
+    border: 0, 5px solid #919191;
+    border-radius: 5px;
+
+    /* Adicionando um sombreamento com desfoque de 5 pixels, deslocamento x e y de 2 pixels e cor preta */
+    box-shadow: 2px 2px 5px #363636;
+}
+
+input[type="text"] {
+    text-align: center;
+    /* Adicionando uma largura para que os campos de entrada ocupem 45% da largura do container */
+    width: 45%;
+    /* Adicionando um espaçamento interno em relação ao seu conteúdo */
+    padding: 5px;
+
+    /* Adicionando uma margem em relação aos outros elementos */
+    margin-bottom: 10px;
+
+    /* Adicionando uma borda, uma sombra e um raio de borda */
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 5px #ccc;
+    border-radius: 3px;
+}
+
+.button-container {
+    width: 100%;
+    text-align: center;
+}
+
+button[type="cardth"] {
+
+    width: 45%;
+    display: inline-block;
+    /* Adicionando uma cor de fundo */
+    background-color: #4CAF50;
+    /* Adicionando uma cor de texto */
+    color: white;
+    /* Adicionando um espaçamento interno em relação ao seu conteúdo */
+    padding: 10px;
+    margin: 2px;
+
+    /* Adicionando uma borda, uma sombra e um raio de borda */
+    border: none;
+    box-shadow: 1px 1px 5px #ccc;
+    border-radius: 3px;
+    /* Adicionando um cursor para mostrar que o botão é clicável */
+    cursor: pointer;
+}
+
+button:hover {
+    /* Adicionando um estilo para quando passamos o mouse sobre o botão */
+    background-color: #3e8e41;
+}
