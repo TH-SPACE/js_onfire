@@ -15,6 +15,41 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estiloth.css">
     <link rel="stylesheet" href="css/calc.css">
+
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background-color: rgb(2, 71, 71);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-weight: bolder;
+            border-radius: 12px;
+            box-shadow: 4px 6px 18px 0px #000000;
+        }
+
+        div#blocoDOM {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            background-color: #bbdefb;
+            height: 100%;
+            padding: 15px;
+            gap: 25px;
+            box-shadow: 4px 6px 18px 0px #000000;
+        }
+
+        div.calcular {
+            padding: 4px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            font: normal 18pt Arial;
+            background-color: rgb(221, 235, 253);
+        }
+    </style>
 </head>
 
 <body>
@@ -40,6 +75,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="operadores.html">OPERADORES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="DOM.html">DOM</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -100,18 +138,39 @@
             </div>
         </div>
     </div>
-    <div style="padding-left: 15px;">
+    <div style="padding-left: 15px; padding-right: 15px;">
         <h1>Iniciando Estudos DOM</h1>
         <p>Aqui vai o resultado</p>
         <p>Aprendendo usar o <strong>DOM</strong> em JavaScript.</p>
-        <div style="display: inline-block;">
-            <img src="img/DOM.png" alt="" style="height: 400px; width: auto;">
-            <div id="msg" style="padding: 5px; margin-top: 5px; ">
-                <strong>CLIQUE AQUI!!</strong>
+
+        <div id="blocoDOM">
+            <div class="calcular">
+                <h4>Somando Valores</h1>
+                    <input type="number" name="num1" id="num1">
+                    <input type="number" name="num2" id="num2">
+                    <div id="res">Resultado:</div>
+                    <input type="button" value="SOMAR" onclick="somar()">
+            </div>
+
+            <div style="display: inline-block;">
+                <img src="img/DOM.png" alt="" style="height: 400px; width: auto;">
+                <div id="msg" style="margin-top: 5px; text-align: center;">
+                    <strong>CLIQUE AQUI!!</strong>
+                </div>
+            </div>
+            <div id="area">
+                Vamos testar.
             </div>
         </div>
     </div>
     <script>
+        function somar() {
+            var num1 = document.getElementById('num1').value
+            var num2 = document.getElementById('num2').value
+            var res = Number(num1) + Number(num2)
+            document.getElementById('res').innerHTML = `Resultado: <strong>${res}</strong>`
+        }
+        window.document.write("<br>Daqui para Baixo é enviado pelo JS<br>")
         window.document.write("<br>Olá Mundo!!<br>")
         window.document.write(window.document.charset + "<br>")
         window.document.write(window.document.URL + "<br><br>")
@@ -123,10 +182,39 @@
         var d = document.getElementById('msg')
         d.style.background = 'blueviolet'
         d.style.color = 'white'
+
+        d.addEventListener('click', clicar1)
+        d.addEventListener('mouseout', sair1)
+        function clicar1() {
+            d.innerText = "Zé Ruela"
+            d.style.backgroundColor = 'blue'
+        }
+        function sair1() {
+            document.getElementById('msg').innerHTML = "SAIU"
+            d.style.backgroundColor = 'red'
+        }
         // essas são as duas formas de alterar no html
         //d.innerText = "Estou Aguardando...."
         //document.getElementById('msg').innerHTML = "deu certo!"
 
+        //EVENTOS DOM
+        var a = document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar() {
+            a.innerText = 'CLICOU!'
+            a.style.background = "blue"
+        }
+        function entrar() {
+            a.innerText = 'ENTROU'
+            a.style.background = "green"
+        }
+        function sair() {
+            a.innerText = 'SAIU'
+            a.style.background = "red"
+        }
 
     </script>
 
