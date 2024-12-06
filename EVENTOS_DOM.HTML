@@ -10,11 +10,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>TH-onfire</title>
+    <title>Eventos Dom</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background-color: rgb(2, 71, 71);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            font-weight: bolder;
+            margin-left: 10px;
+            margin-top: 10px;
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/estiloth.css">
-    <link rel="stylesheet" href="css/calc.css">
+        }
+    </style>
+
 </head>
 
 <body>
@@ -41,13 +53,16 @@
                 <li class="nav-item">
                     <a class="nav-link" href="operadores.html">OPERADORES</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="DOM.html">DOM</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         OUTROS CONTEÚDOS
                     </a>.
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="calculadora.html">CALCULADORA</a>
+                        <a class="dropdown-item" href="calculadora.html">CALCULADORA GPT</a>
                         <a class="dropdown-item" href="#">Outra Coisa</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Qualquer coisa aqui...</a>
@@ -100,32 +115,31 @@
             </div>
         </div>
     </div>
-    <div style="padding-left: 15px;">
-        <h1>Iniciando Estudos DOM</h1>
-        <p>Aqui vai o resultado</p>
-        <p>Aprendendo usar o <strong>DOM</strong> em JavaScript.</p>
-        <div style="display: inline-block;">
-            <img src="img/DOM.png" alt="" style="height: 400px; width: auto;">
-            <div id="msg" style="padding: 5px; margin-top: 5px; ">
-                <strong>CLIQUE AQUI!!</strong>
-            </div>
-        </div>
+
+    <div id="area">
+        Vamos testar.
     </div>
+
+    <!-- ESTUDANDO AQUI -->
     <script>
-        window.document.write("<br>Olá Mundo!!<br>")
-        window.document.write(window.document.charset + "<br>")
-        window.document.write(window.document.URL + "<br><br>")
 
-        var p1 = window.document.getElementsByTagName('p')[1]
-        p1.style.color = 'blue'
-        document.write("Usando o getElementsByTagName: " + p1.innerHTML)
+        var a = document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
 
-        var d = document.getElementById('msg')
-        d.style.background = 'blueviolet'
-        d.style.color = 'white'
-        // essas são as duas formas de alterar no html
-        //d.innerText = "Estou Aguardando...."
-        //document.getElementById('msg').innerHTML = "deu certo!"
+        function clicar() {
+            a.innerText = 'CLICOU!'
+            a.style.background = "blue"
+        }
+        function entrar() {
+            a.innerText = 'ENTROU'
+            a.style.background = "green"
+        }
+        function sair() {
+            a.innerText = 'SAIU'
+            a.style.background = "red"
+        }
 
 
     </script>
