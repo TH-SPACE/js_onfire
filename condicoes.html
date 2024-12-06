@@ -130,6 +130,17 @@
 
         </div>
     </div>
+    <div style="display: flex;">
+        <div id="multas">
+            <h1>Verificar País</h1>
+            <h5>Seu País:</h5>
+            <input type="text" id="txtp" placeholder="País">
+            <input type="button" value="Verificar" onclick="verifica()">
+        </div>
+        <div id="res1" style="width: 600px; text-align: left;padding: 10px; ">
+
+        </div>
+    </div>
     <!-- ESTUDANDO AQUI -->
     <script>
         function calcular() {
@@ -147,7 +158,17 @@
                 res.innerHTML += "VOCÊ FOI MULTADO PELO DETRAN!! SE LASCOU!!"
             } else { res.innerHTML += "Continue andando corretamente!!" }
         }
-
+        function verifica() {
+            var txtp = document.getElementById('txtp').value
+            var res = document.getElementById('res1')
+            res.innerHTML = `Seu país é ${txtp.toUpperCase()}!!<br>`
+            res.style.background = "white"
+            if (txtp.toUpperCase() != 'BRASIL') {
+                res.innerHTML += "Você é estrangeiro!"
+            } else {
+                res.innerHTML += "BRBR HUEHUEHUE BRBR HUEHEU"
+            }
+        }
     </script>
 
     <!-- Optional JavaScript -->
