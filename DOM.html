@@ -104,14 +104,27 @@
         <h1>Iniciando Estudos DOM</h1>
         <p>Aqui vai o resultado</p>
         <p>Aprendendo usar o <strong>DOM</strong> em JavaScript.</p>
+        <div id="msg" style="padding: 5px; display: inline-block;">
+            <strong>CLIQUE AQUI!!</strong>
+        </div>
+
     </div>
     <script>
-        window.document.write("Olá Mundo!!<br>")
+        window.document.write("<br>Olá Mundo!!<br>")
         window.document.write(window.document.charset + "<br>")
         window.document.write(window.document.URL + "<br><br>")
 
-        var p1 = window.document.getElementsByTagName('p')[0]
-        window.document.write(p1.innerHTML)
+        var p1 = window.document.getElementsByTagName('p')[1]
+        p1.style.color = 'blue'
+        document.write("Usando o getElementsByTagName: " + p1.innerHTML)
+
+        var d = document.getElementById('msg')
+        d.style.background = 'blueviolet'
+        d.style.color = 'white'
+        // essas são as duas formas de alterar no html
+        //d.innerText = "Estou Aguardando...."
+        //document.getElementById('msg').innerHTML = "deu certo!"
+
 
     </script>
 
