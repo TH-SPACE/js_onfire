@@ -14,7 +14,19 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/estiloth.css">
-
+    <style>
+        div#multas {
+            width: 300px;
+            margin: 5px;
+            align-items: stretch;
+            background-color: #bbdefb;
+            height: 100%;
+            padding: 15px;
+            gap: 25px;
+            box-shadow: 4px 6px 18px 0px #525252;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,7 +54,7 @@
                         <a class="dropdown-item" href="aulas.html">AULAS</a>
                         <a class="dropdown-item" href="operadores.html">OPERADORES</a>
                         <a class="dropdown-item" href="DOM.html">DOM</a>
-                        <a class="dropdown-item" href="condicoes.html">CONDICIONAIS</a>
+                        <a class="dropdown-item" href="DOM.html">CONDICIONAIS</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Qualquer coisa aqui...</a>
                     </div>
@@ -105,9 +117,36 @@
             </div>
         </div>
     </div>
+    <div style="display: flex;">
+        <div id="multas">
+            <h1>Sistema de Multas</h1>
+            <h5>Velocidade do Carro:</h5>
+            <input type="number" id="txtvel" placeholder="Velocidade">
+            <h5>Velocidade da Via:</h5>
+            <input type="number" id="txtvia" placeholder="Velocidade Via">
+            <input type="button" value="Verificar" onclick="calcular()">
+        </div>
+        <div id="res" style="width: 600px; text-align: left;padding: 10px; ">
 
+        </div>
+    </div>
     <!-- ESTUDANDO AQUI -->
     <script>
+        function calcular() {
+            var txtvel = window.document.getElementById('txtvel')
+            var txtvia = window.document.getElementById('txtvia')
+            var vel = Number(txtvel.value)
+            var via = Number(txtvia.value)
+            //RESULTADOS
+            var res = document.getElementById('res')
+            res.innerHTML = `<p>Sua Velocidade Atual é de <strong>${vel}Km/h!!</strong></p>`
+            res.innerHTML += `<p>Velocidade da VIA é <strong>${via}Km/h!</strong></p>`
+            res.style.background = "white"
+            res.innerHTML += `<p>Dirija sempre com cinto de Segurança!</p>`
+            if (vel > via) {
+                res.innerHTML += "VOCÊ FOI MULTADO PELO DETRAN!! SE LASCOU!!"
+            } else { res.innerHTML += "Continue andando corretamente!!" }
+        }
 
     </script>
 
