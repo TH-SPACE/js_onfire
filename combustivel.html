@@ -21,7 +21,6 @@
             padding: 5px;
             margin: 10px;
             gap: 5px;
-            border: 2px solid #ca1919;
         }
 
         .calc {
@@ -70,8 +69,6 @@
             flex-direction: row;
             flex-wrap: nowrap;
             align-content: stretch;
-
-            background-color: #bbdefb;
             height: 100%;
             padding: 15px;
             gap: 5px;
@@ -162,21 +159,20 @@
     </div>
 
 
-    <div class="consumo" id="res">
-        <div id="res"></div>
-        <div class="calc">
+    <div class="consumo">
+        <div class="calc" id="resDisplay1">
             <h2>Distância</h2>
             <p>Km a ser percorrido:</p>
             <input type="number" id="txtkm" placeholder="Digite o KM">
         </div>
-        <div class="calc">
+        <div class="calc" id="resDisplay2">
             <h2>Consumo Médio de Km/Litro</h2>
             <p>Km/Litro Gasolina:</p>
             <input type="number" id="txtGas" placeholder="Gasto na Gasolina">
             <p>Km/Litro Etanol:</p>
             <input type="number" id="txtEta" placeholder="Gasto no Etanol">
         </div>
-        <div class="calc">
+        <div class="calc" id="resDisplay3">
             <h2>Preço do litro (R$):</h2>
             <div class="par">
                 <p>Gasolina:</p>
@@ -187,23 +183,39 @@
                 <input type="number" id="txtEta" placeholder="Gasto no Etanol">
             </div>
         </div>
-        <div class="botao">
+        <div class="botao" id="resDisplay4">
             <button Class="btn btn-primary" onclick="voltar()">LIMPAR</button>
             <button Class="btn btn-primary" onclick="calcular()">CALCULAR</button>
         </div>
+        <div id="resDisplay" class="calc" style="display:none">
+            <p>Gasolina:</p>
+            <div class="botao">
+                <button Class="btn btn-primary" id="btn-voltar" onclick="voltar()">VOLTAR</button>
+            </div>
+        </div>
     </div>
-    <button Class="btn btn-primary" id="btn-voltar" onclick="voltar()" style="display:none;">VOLTAR</button>
+
     <!-- ESTUDANDO AQUI -->
     <script>
         function calcular() {
-            var btnVoltar = document.getElementById('btn-voltar')
-            btnVoltar.style.display = 'block'
+            //aparecer div oculta
+            document.getElementById('resDisplay').style.display = 'flex'
+            //desaparecer com as divs
+            document.getElementById('resDisplay1').style.display = 'none'
+            document.getElementById('resDisplay2').style.display = 'none'
+            document.getElementById('resDisplay3').style.display = 'none'
+            document.getElementById('resDisplay4').style.display = 'none'
+
             var kmP = document.getElementById('txtkm')
             var res = document.getElementById('res')
             res.innerHTML = kmP.value
         }
         function voltar() {
-            window.location.reload()
+            document.getElementById('resDisplay1').style.display = 'flex'
+            document.getElementById('resDisplay2').style.display = 'flex'
+            document.getElementById('resDisplay3').style.display = 'flex'
+            document.getElementById('resDisplay4').style.display = 'flex'
+            document.getElementById('resDisplay').style.display = 'none'
         }
     </script>
 
