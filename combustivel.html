@@ -37,7 +37,7 @@
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        h2 {
+        h3 {
             margin-bottom: 10px;
         }
 
@@ -50,6 +50,7 @@
         p {
             margin-bottom: 5px;
             margin-right: 10px;
+            font-size: 14pt
         }
 
         input {
@@ -161,34 +162,35 @@
 
     <div class="consumo">
         <div class="calc" id="resDisplay1">
-            <h2>Distância</h2>
+            <h3>Distância</h3>
             <p>Km a ser percorrido:</p>
             <input type="number" id="txtkm" placeholder="Digite o KM">
         </div>
         <div class="calc" id="resDisplay2">
-            <h2>Consumo Médio de Km/Litro</h2>
+            <h3>Consumo Médio de Km/Litro</h3>
             <p>Km/Litro Gasolina:</p>
             <input type="number" id="txtGas" placeholder="Gasto na Gasolina">
             <p>Km/Litro Etanol:</p>
             <input type="number" id="txtEta" placeholder="Gasto no Etanol">
         </div>
         <div class="calc" id="resDisplay3">
-            <h2>Preço do litro (R$):</h2>
+            <h3>Preço do litro (R$):</h3>
             <div class="par">
                 <p>Gasolina:</p>
-                <input type="number" id="txtGas" placeholder="Gasto na Gasolina">
+                <input type="number" id="txtPgas" placeholder="Gasto na Gasolina">
             </div>
             <div class="par">
                 <p>Etanol:</p>
-                <input type="number" id="txtEta" placeholder="Gasto no Etanol">
+                <input type="number" id="txtPeta" placeholder="Gasto no Etanol">
             </div>
         </div>
         <div class="botao" id="resDisplay4">
-            <button Class="btn btn-primary" onclick="voltar()">LIMPAR</button>
+            <button Class="btn btn-primary" onclick="limpar()">LIMPAR</button>
             <button Class="btn btn-primary" onclick="calcular()">CALCULAR</button>
         </div>
-        <div id="resDisplay" class="calc" style="display:none">
-            <p>Gasolina:</p>
+        <div id="resDisplay" class="calc" style="display:none; background-color: aliceblue;color: black;">
+            <p id="res">Gasolina:</p>
+
             <div class="botao">
                 <button Class="btn btn-primary" id="btn-voltar" onclick="voltar()">VOLTAR</button>
             </div>
@@ -206,16 +208,61 @@
             document.getElementById('resDisplay3').style.display = 'none'
             document.getElementById('resDisplay4').style.display = 'none'
 
-            var kmP = document.getElementById('txtkm')
+            var kmP = document.getElementById('txtkm').value
+            var GasC = document.getElementById('txtGas').value
+            var EtaC = document.getElementById('txtEta').value
+
+            var Lgas = Number(kmP) / Number(GasC)
+            var Leta = Number(kmP) / Number(EtaC)
+
+            var Pgas = document.getElementById('txtPgas').value
+            var Peta = document.getElementById('txtPeta').value
+
+            var CustoGas = Number(Lgas) * Number(Pgas)
+            var CustoEta = Number(Leta) * Number(Peta)
+
+
             var res = document.getElementById('res')
-            res.innerHTML = kmP.value
+
+            if (GasC == "" || EtaC == "") {
+                res.innerHTML = `<div class="alert alert-warning" role="alert">ERRO!! <br>PREENCHA TODOS OS CAMPOS!!</div>`
+                document.getElementById('resDisplay').style.background = 'red'
+            } else {
+                res.innerHTML = `<strong>${kmP} KMs de Distância.</strong><br><br>`
+
+                res.innerHTML += `<p><strong>Consumo do Carro:</strong></p>`
+                res.innerHTML += `<p>Km/Litro(s) Gasolina: ${GasC}.</p>`
+                res.innerHTML += `<p>Km/Litro(s) Etanol: ${EtaC}.</p><br>`
+
+                res.innerHTML += `<p><strong>Gasto em Litros:</strong></p>`
+                res.innerHTML += `<p>Vai Gastar ${Lgas} Litro(s) de Gasolina.</p>`
+                res.innerHTML += `<p>Vai Gastar ${Leta} Litro(s) de Etanol.</p><br>`
+                if (Pgas == "" || Peta == "") {
+                    res.innerHTML += `<p></p>`
+                } else {
+                    res.innerHTML += `<p><strong>Preço dos combustíveis:</strong></p>`
+                    res.innerHTML += `<p style="background-color: #fcfda7;">Valor da Gasolina: R$ ${Pgas}.</p>`
+                    res.innerHTML += `<p style="background-color: #fcfda7;">Valor do Etanol R$ ${Peta}.</p><br>`
+
+                    res.innerHTML += `<p><strong>Valor total:</strong></p>`
+                    res.innerHTML += `<p>Preço usando Gasolina: R$ ${CustoGas}.</p>`
+                    res.innerHTML += `<p>Preço usando Etanol: R$ ${CustoEta}.</p><br>`
+
+                    res.innerHTML += `<p>Ta caro de mais!!</p>`
+                }
+            }
+
         }
+
         function voltar() {
             document.getElementById('resDisplay1').style.display = 'flex'
             document.getElementById('resDisplay2').style.display = 'flex'
             document.getElementById('resDisplay3').style.display = 'flex'
             document.getElementById('resDisplay4').style.display = 'flex'
             document.getElementById('resDisplay').style.display = 'none'
+        }
+        function limpar() {
+            window.location.reload();
         }
     </script>
 
