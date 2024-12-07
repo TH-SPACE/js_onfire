@@ -10,15 +10,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
+        .consumo {
+
+            display: flex;
+            align-items: flex-start;
+            /* flex-flow: column nowrap; */
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: 100%;
+            padding: 5px;
+            margin: 10px;
+            gap: 5px;
+            border: 2px solid #ca1919;
+        }
+
         .calc {
+            background-color: rgb(3, 49, 88);
+            color: white;
+            width: 100%;
             max-width: 500px;
-            margin: 0 auto;
             padding: 20px;
-            border: 2px solid #ccc;
+            border: 2px solid #a0a0a0;
             border-radius: 5px;
             display: flex;
             flex-direction: column;
             align-items: baseline;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         h2 {
@@ -42,6 +59,25 @@
             border-radius: 3px;
             width: 80%;
             margin-bottom: 10px;
+        }
+
+        .botao {
+            display: flex;
+
+            justify-content: flex-end;
+            align-items: flex-start;
+            /* flex-flow: row nowrap; */
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: stretch;
+
+            background-color: #bbdefb;
+            height: 100%;
+            padding: 15px;
+            gap: 5px;
+            width: 100%;
+            max-width: 500px;
+
         }
     </style>
     <title>COMBUSTÍVEL</title>
@@ -125,7 +161,9 @@
         Vamos calcular o gasto de combustível<a id="recebeNome" href="#" class="alert-link">!!!</a>
     </div>
 
-    <div class="consumo">
+
+    <div class="consumo" id="res">
+        <div id="res"></div>
         <div class="calc">
             <h2>Distância</h2>
             <p>Km a ser percorrido:</p>
@@ -149,20 +187,31 @@
                 <input type="number" id="txtEta" placeholder="Gasto no Etanol">
             </div>
         </div>
+        <div class="botao">
+            <button Class="btn btn-primary" onclick="voltar()">LIMPAR</button>
+            <button Class="btn btn-primary" onclick="calcular()">CALCULAR</button>
+        </div>
     </div>
-
-
-
+    <button Class="btn btn-primary" id="btn-voltar" onclick="voltar()" style="display:none;">VOLTAR</button>
     <!-- ESTUDANDO AQUI -->
     <script>
-
+        function calcular() {
+            var btnVoltar = document.getElementById('btn-voltar')
+            btnVoltar.style.display = 'block'
+            var kmP = document.getElementById('txtkm')
+            var res = document.getElementById('res')
+            res.innerHTML = kmP.value
+        }
+        function voltar() {
+            window.location.reload()
+        }
     </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
+    <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
