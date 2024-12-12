@@ -2,7 +2,7 @@
 
 var res = document.getElementById('res')
 let rec = document.getElementById('recuperacao')
-let notaGeral = ''
+let notaGeral;
 var img = document.createElement('img')
 
 
@@ -10,8 +10,7 @@ function calcular() {
     var n1 = document.getElementById('n1')
     var n2 = document.getElementById('n2')
     let notaGeral = (Number(n1.value) + Number(n2.value)) / 2
-
-
+    localStorage.setItem('notaGeral', notaGeral)
     img.setAttribute('id', 'foto')
 
     if (n1.value == "" || n2.value == "") {
@@ -26,7 +25,7 @@ function calcular() {
         dvi1.style.display = 'none'
         res.innerHTML = `<p>Você Passou!! Sua Nota é: ${notaGeral}</p>
         <div class="botoes">
-                <input class="btn btn-secondary btn-lg" type="button" value="VOLTAR" onclick="voltar()">
+                <input class="btn btn-success btn-lg" type="button" value="VOLTAR" onclick="voltar()">
             </div>`
         img.setAttribute('src', 'ok.gif')
 
@@ -39,10 +38,12 @@ function calcular() {
         rec.style.display = 'block'
     }
     res.appendChild(img)
+
 }
 
-function recuperacao() {
+function recuperacao(nota) {
     let n3 = document.getElementById('rec').value
+    let notaGeral = localStorage.getItem('notaGeral')
     let calRec = (Number(notaGeral) + Number(n3)) / 2
     if (n3 == '') {
         res.innerHTML += `<br><div class="alert alert-danger" role="alert">
