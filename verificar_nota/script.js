@@ -26,7 +26,7 @@ function calcular() {
         dvi1.style.display = 'none'
         res.innerHTML = `<p>Você Passou!! Sua Nota é: ${notaGeral}</p>
         <div class="botoes">
-                <input class="btn btn-success btn-lg" type="button" value="VOLTAR" onclick="voltar()">
+                <input class="btn btn-secondary btn-lg" type="button" value="VOLTAR" onclick="voltar()">
             </div>`
         img.setAttribute('src', 'ok.gif')
 
@@ -54,7 +54,7 @@ function recuperacao() {
         dvi1.style.display = 'none'
         res.innerHTML = `<p>Você Passou!! Sua Nota é: ${calRec}</p>
         <div class="botoes">
-                <input class="btn btn-success btn-lg" type="button" value="VOLTAR" onclick="voltar()">
+                <input class="btn btn-secondary btn-lg" type="button" value="VOLTAR" onclick="voltar()">
             </div>`
 
         rec.style.display = 'none'
@@ -63,11 +63,12 @@ function recuperacao() {
         let dvi1 = document.getElementById('bloc1')
         dvi1.style.visibility = 'hidden'
         dvi1.style.display = 'none'
-        res.innerHTML = `<p class="alert alert-danger">Você não passou!! :( Sua Nota é: ${calRec}</p>
-        <div class="botoes">
-                <input class="btn btn-success btn-lg" type="button" value="VOLTAR" onclick="voltar()">
-            </div>`
+        res.innerHTML = `<p class="alert alert-danger">Você não passou!! :( Sua Nota é: ${calRec}</p>`
+
         img.setAttribute('src', 'erro.gif')
+        res.innerHTML += `<div class="botoes">
+                <input class="btn btn-secondary btn-lg" type="button" value="VOLTAR" onclick="voltar()">
+            </div>`
         rec.style.display = 'none'
 
     }
