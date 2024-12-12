@@ -1,19 +1,15 @@
 function verificar() {
-    // var data = new Date()
-    // var ano = data.getFullYear()
-    //var fano = document.getElementById('txtano')
+
     var tempo = document.getElementById('tempo').value
     var res = document.getElementById('res')
-    //if (fano.value.length == 0 || Number(fano.value) > ano) {
-    //     window.alert('ERRO, verifique o ano que digitou!!')
-    // } else {
     var tipo = document.getElementsByName('radtip')
-    // var difAno = ano - Number(fano.value)
     var tipoCard = ''
-    //criando elemento no html
+    //cria um elementeo de imagem
     var img = document.createElement('img')
-    //atribui o id=foto no img
+    //da id=foto para a img
     img.setAttribute('id', 'foto')
+
+    //verifica qual radio esta selecionado
     if (tipo[0].checked) {
         tipoCard = 'Magia'
         if (tempo == "antiga") {
