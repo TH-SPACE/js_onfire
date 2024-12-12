@@ -10,6 +10,7 @@ function calcular() {
     var n1 = document.getElementById('n1')
     var n2 = document.getElementById('n2')
     let notaGeral = (Number(n1.value) + Number(n2.value)) / 2
+    //ARMAZENA NO NAVEGADOR
     localStorage.setItem('notaGeral', notaGeral)
     img.setAttribute('id', 'foto')
 
@@ -41,7 +42,7 @@ function calcular() {
 
 }
 
-function recuperacao(nota) {
+function recuperacao() {
     let n3 = document.getElementById('rec').value
     let notaGeral = localStorage.getItem('notaGeral')
     let calRec = (Number(notaGeral) + Number(n3)) / 2
