@@ -39,7 +39,6 @@ function calcular() {
         rec.style.display = 'block'
     }
     res.appendChild(img)
-
 }
 
 function recuperacao() {
