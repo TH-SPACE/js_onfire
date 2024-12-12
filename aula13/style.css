@@ -1,5 +1,5 @@
-body {
-    background: rgb(63, 125, 187);
+body.ygo {
+    background: rgb(40, 80, 141);
     font: normal 15pt Arial;
 }
 
@@ -8,7 +8,7 @@ header {
     text-align: center;
 }
 
-section.hora {
+section.ygo {
     background: white;
     border-radius: 10px;
     padding: 15px;
@@ -23,7 +23,7 @@ footer {
     font-style: italic;
 }
 
-img.hora {
+img.ygo {
     width: 400px;
     height: 400px;
     border-radius: 100%;
@@ -32,9 +32,8 @@ img.hora {
 
 
 
-div.hora {
+div.ygo {
     align-items: center;
-    text-align: center;
     padding: 8px;
 
 }

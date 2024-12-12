@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HORA DO DIA</title>
+    <title>YUGIOH</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -13,7 +13,7 @@
 
 </head>
 
-<body onload="carregar()">
+<body class="ygo" onload="carregar()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="../index.html">
             <img src="../img/letra-t.gif" width="30" height="30" class="d-inline-block align-top rounded-circle"
@@ -59,14 +59,33 @@
         </div>
     </nav>
     <header>
-        <h1>HORA DO DIA!!</h1>
+        <h1>Verificar Carta</h1>
     </header>
-    <section class="hora">
-        <div id="msg" class="hora">
-            carregando...
+    <section class="ygo">
+        <div class="ygo">
+            <p>
+                <label for="carta">Selecione a carta:</label>
+                <select name="carta" id="tempo">
+                    <option value="antiga">Antiga</option>
+                    <option value="nova">Nova</option>
+                </select>
+            </p>
+            <p>Tipo de Carta:
+                <input type="radio" name="radtip" id="magi" checked>
+                <label for="magi">Magia</label>
+                <input type="radio" name="radtip" id="trap">
+                <label for="trap">Armadilha</label>
+                <input type="radio" name="radtip" id="mons">
+                <label for="mons">Monstro</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>
+
         </div>
-        <div id="foto" class="hora">
-            <img class="hora" id="imagem" src="img/manha.jpg" alt="Foto do Dia">
+        <div id="res" class="ygo">
+            Preencha para ver a carta!!
+
         </div>
     </section>
     <footer>
