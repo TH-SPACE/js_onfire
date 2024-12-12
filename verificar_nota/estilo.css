@@ -1,0 +1,48 @@
+body.notas {
+    background: rgb(175, 255, 224);
+
+}
+
+section {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: auto;
+    max-width: 500px;
+    margin: 10px;
+    box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.568);
+}
+
+p>label {
+    font-weight: bold;
+    width: 100px;
+}
+
+p {
+    display: flex;
+    background-color: #edfbbb;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+}
+
+.botoes {
+    display: flex;
+    gap: 15px;
+    justify-content: end;
+    align-items: center;
+}
+
+img#foto {
+    width: 100px;
+    height: 100px
+}
+
+#res {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
+}
