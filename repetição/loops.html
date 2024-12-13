@@ -12,12 +12,11 @@
 
     <title>TH-onfire</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/estiloth.css">
+    <link rel="stylesheet" href="estilo.css">
 
 </head>
 
-<body>
+<body class="loop">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.html">
             <img src="../img/letra-t.gif" width="30" height="30" class="d-inline-block align-top rounded-circle"
@@ -97,6 +96,33 @@
     <div class="alert alert-primary" role="alert">
         Laços de Repetição <a id="recebeNome" href="#" class="alert-link">!</a>
     </div>
+
+    <header>
+        <h1>Bora Contar</h1>
+    </header>
+    <section class="loop">
+        <div class="loop">
+            <label for="">Início:</label>
+            <input type="number" id="numIni" placeholder="Digite um Número">
+        </div>
+        <div class="loop">
+            <label for="">Fim:</label>
+            <input type="number" id="numFim" placeholder="Digite um Número">
+        </div>
+        <div class="loop">
+            <label for="">Passo:</label>
+            <input type="number" id="numPas" placeholder="Digite um Número">
+        </div>
+        <div class="loop">
+            <input class="btn btn-outline-dark btn-lg" type="button" value="Contar" onclick="contar()">
+        </div>
+        <div class="loop" id="res">
+
+        </div>
+    </section>
+    <footer>@Thiago_onfire</footer>
+
+    <script src="script.js"></script>
 
 
 
