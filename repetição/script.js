@@ -37,6 +37,8 @@ function tabuada() {
                             <tr>
                                 <th scope="col">Multiplicação</th>
                                 <th scope="col">Resultado</th>
+                                <th scope="col">Soma</th>
+                                <th scope="col">Resultado</th>
                             </tr>
                         </thead>`
     if (num1.value.length == 0) {
@@ -47,14 +49,13 @@ function tabuada() {
             // res.innerHTML += `<span class="badge badge-info">${num1} x ${t} = ${num1 * t}</span>`
             res.innerHTML += `<tbody>
                             <tr>
-                                <th scope="col">${num1} x ${t}</th>
+                                <th scope="row" class="table-primary">${num1} + ${t}</th>
+                                <th scope="col" class="table-primary">${num1 + t}</th>
+                                <th scope="row">${num1} x ${t}</th>
                                 <th scope="col">${num1 * t}</th>
-                            </tr>
+                            </tr>                            
                         </tbody>`
         }
-        res.innerHTML += `<tr>
-            <th scope="col">Fim</th>
-            <th scope="col">\u{1F3C1}</th>
-            </tr>`
+
     }
 } 
