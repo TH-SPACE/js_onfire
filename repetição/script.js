@@ -29,3 +29,11 @@ function contar() {
         }
     }
 }
+
+function tabuada() {
+    let res = document.getElementById('resTabuada')
+    let num1 = document.getElementById('numCalc')
+
+    res.innerHTML = `<h4>O número é: ${num1.value} </h4>`
+
+}
