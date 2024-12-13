@@ -3,6 +3,10 @@ body.loop {
 
 }
 
+.blocos {
+    margin: 5px;
+}
+
 header {
     color: white;
     text-align: center;
