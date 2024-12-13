@@ -4,6 +4,7 @@ body.loop {
 }
 
 .blocos {
+    gap: 10px;
     margin: 5px;
 }
 
@@ -28,17 +29,7 @@ footer {
     font-style: italic;
 }
 
-img.loop {
-    width: 400px;
-    height: 400px;
-    border-radius: 100%;
-    margin: auto;
-}
-
-
-
 div.loop {
-
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -48,10 +39,16 @@ div.loop {
 
 }
 
+p.th>input {
+    margin-bottom: 8px;
+}
+
 input {
     margin-top: -8px;
 }
 
 label {
+    background-color: aliceblue;
+    width: 100%;
     font-weight: bold;
 }
