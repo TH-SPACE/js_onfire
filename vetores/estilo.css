@@ -1,0 +1,91 @@
+body.loop {
+    background: rgb(77, 134, 219);
+
+}
+
+.blocos {
+    gap: 10px;
+    margin: 5px;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section.loop {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: auto;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 5px 2px 10px 1px rgba(0, 0, 0, 0.568);
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+
+div.loop {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 5px;
+
+}
+
+p.th>input {
+    margin-bottom: 14px;
+}
+
+input {
+    margin-top: -8px;
+}
+
+label {
+    background-color: aliceblue;
+    width: 100%;
+    font-weight: bold;
+}
+
+
+
+div.at-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.at-item {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 3em;
+
+    animation-name: scale-down-center;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: reverse;
+    animation-fill-mode: none;
+
+    /* shorthand
+		animation: scale-down-center 1s linear 0s 1 reverse none;*/
+}
+
+@keyframes scale-down-center {
+
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(.2);
+    }
+}
