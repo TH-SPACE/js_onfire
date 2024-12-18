@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "js_onfire"
+    "liveServer.settings.multiRootWorkspaceName": "js_onfire",
+    "liveServer.settings.port": 5501
 }
